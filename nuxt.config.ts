@@ -5,12 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: "bun",
   },
-  modules: [
-    "shadcn-nuxt",
-    "nuxt-security",
-    "@nuxtjs/sitemap",
-    "nuxt-schema-org"
-  ],
+  modules: ["shadcn-nuxt", "nuxt-security", "@nuxtjs/sitemap", "nuxt-schema-org"],
   css: ["~/assets/css/tailwind.css"],
   postcss: {
     plugins: {
@@ -22,17 +17,14 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      titleTemplate: (title?: string) =>
-        title ? `${title} · Dash Nuxt` : "Dash Nuxt",
+      titleTemplate: (title?: string) => (title ? `${title} · Dash Nuxt` : "Dash Nuxt"),
       meta: [
         { name: "description", content: "Nuxt 4 + Bun + Tailwind v4 + shadcn-vue starter." },
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: "Dash Nuxt" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      link: [
-        { rel: "canonical", href: process.env.NUXT_SITE_URL || "http://localhost:3000" },
-      ],
+      link: [{ rel: "canonical", href: process.env.NUXT_SITE_URL || "http://localhost:3000" }],
     },
   },
   shadcn: {
