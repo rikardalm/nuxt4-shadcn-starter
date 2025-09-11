@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/postcss";
-import autoprefixer from "autoprefixer";
+// PostCSS plugins are referenced by name for reliability under Bun
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -10,8 +9,10 @@ export default defineNuxtConfig({
   modules: ["shadcn-nuxt", "nuxt-security", "@nuxtjs/sitemap", "nuxt-schema-org"],
   css: ["~/assets/css/tailwind.css"],
   postcss: {
-    // Import plugins directly to avoid resolver issues under Bun
-    plugins: [tailwindcss(), autoprefixer()],
+    plugins: {
+      "@tailwindcss/postcss": {},
+      autoprefixer: {},
+    },
   },
   components: [{ path: "app/components", extensions: ["vue"] }],
   app: {
