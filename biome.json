@@ -1,6 +1,20 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite/biome/core"],
+  "files": {
+    "includes": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.json",
+      "**/*.css",
+      "!!apps/**/.nuxt",
+      "!!apps/**/.output",
+      "!!**/dist",
+      "!!**/node_modules"
+    ]
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",

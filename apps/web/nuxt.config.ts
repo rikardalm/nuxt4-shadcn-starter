@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      titleTemplate: (title?: string) => (title ? `${title} · Dash Nuxt` : "Dash Nuxt"),
+      titleTemplate: "%s · Dash Nuxt",
       meta: [
         { name: "description", content: "Nuxt 4 + Bun + Tailwind v4 + shadcn-vue starter." },
         { property: "og:type", content: "website" },
@@ -38,14 +38,10 @@ export default defineNuxtConfig({
     // Enable strict security headers in production only
     enabled: process.env.NODE_ENV === "production",
   },
-  sitemap: {
-    siteUrl: process.env.NUXT_SITE_URL || "http://localhost:3000",
-    autoLastmod: true,
-    sitemaps: true,
-    xsl: false,
-    autoI18n: false,
+  site: {
+    url: process.env.NUXT_SITE_URL || "http://localhost:3000",
   },
-  schemaOrg: {
-    host: process.env.NUXT_SITE_URL || "http://localhost:3000",
+  build: {
+    transpile: ["@repo/shared"],
   },
 });

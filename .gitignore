@@ -5,11 +5,13 @@
 .nitro
 .cache
 dist
-.eslintcache
-/.simple-git-hooks
+apps/**/.nuxt
+apps/**/.output
+**/dist
 
 # Node dependencies
 node_modules
+**/node_modules
 
 # Logs
 logs
@@ -19,6 +21,7 @@ logs
 .DS_Store
 .fleet
 .idea
+/.simple-git-hooks
 
 # Local env files
 .env
